@@ -4,6 +4,9 @@
 .align 2
 .text
 
+linea: .asciz " --- --- --- ---\n"
+formato_hits: .asciz "| %c | %c | %c | %c |\n"
+
 line:
     /*
     symb    code

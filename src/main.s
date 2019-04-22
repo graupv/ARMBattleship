@@ -1,7 +1,34 @@
 
 .align 2
 .global main
+.type main, %function
+@ .func main
 .data
+
+tiro_input: .asciz "%c%d\n"   /*e.g. A4 -- O podemos pedir dos inputs fila -> columna */
+intro: .asciz "Bienvenidos a Battleship\n"
+mensaje_: .asciz "\n"
+
+p1_arr1: .byte ' ', ' ', ' ', ' '
+            @   'x', 'o'
+p1_arr2: .byte ' ', ' ', ' ', ' '
+p1_arr3: .byte ' ', ' ', ' ', ' '
+p1_arr4: .byte ' ', ' ', ' ', ' '
+
+p2_arr1: .byte ' ', ' ', ' ', ' '
+p2_arr2: .byte ' ', ' ', ' ', ' '
+p2_arr3: .byte ' ', ' ', ' ', ' '
+p2_arr4: .byte ' ', ' ', ' ', ' '
+
+main:
+    stmfd sp!, {lr} @ inicio de programa.
+
+
+    @Salida
+	mov r0,#0
+	mov r3,#0
+	ldmfd sp!,{lr}
+	bx lr
 
 /*
 El juego consiste en un tablero 4x4 donde cada jugador coloca un barco 
