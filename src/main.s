@@ -11,15 +11,25 @@ mensaje_: .asciz "\n"
 
 p1_arr1: .byte ' ', ' ', ' ', ' '
             @   'x', 'o'
+            @   120 / 88 , 111 / 79
 p1_arr2: .byte ' ', ' ', ' ', ' '
 p1_arr3: .byte ' ', ' ', ' ', ' '
 p1_arr4: .byte ' ', ' ', ' ', ' '
+
+p1_arr1_tiros: .byte ' ', ' ', ' ', ' '
+p1_arr2_tiros: .byte ' ', ' ', ' ', ' '
+p1_arr3_tiros: .byte ' ', ' ', ' ', ' '
+p1_arr4_tiros: .byte ' ', ' ', ' ', ' '
 
 p2_arr1: .byte ' ', ' ', ' ', ' '
 p2_arr2: .byte ' ', ' ', ' ', ' '
 p2_arr3: .byte ' ', ' ', ' ', ' '
 p2_arr4: .byte ' ', ' ', ' ', ' '
 
+p2_arr1_tiros: .byte ' ', ' ', ' ', ' '
+p2_arr2_tiros: .byte ' ', ' ', ' ', ' '
+p2_arr3_tiros: .byte ' ', ' ', ' ', ' '
+p2_arr4_tiros: .byte ' ', ' ', ' ', ' '
 main:
     stmfd sp!, {lr} @ inicio de programa.
 
