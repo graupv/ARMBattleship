@@ -15,7 +15,7 @@ with open('C:\\Users\\gerap\\Documents\\GitHub\\ARMBattleship\\src\\pic.txt', en
 
 with open('code.s', 'w') as file:
     for line in range(0, len(lines) - 1):
-        file.write(f'art_{line}: .asciz \"{lines[line][:len(lines[line]) - 1]}\"')
+        file.write(f"art_{line}: .asciz \"{lines[line][:len(lines[line]) - 1]}\"")
 
 with open('C:\\Users\\gerap\\Documents\\GitHub\\ARMBattleship\\src\\pic2.txt', encoding='utf-8') as f:
     for line in f:

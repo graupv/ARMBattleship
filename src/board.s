@@ -1,26 +1,86 @@
 /*printings*/
 
-.global
+.data
 .align 2
+
+arreglo:	.byte ' ', 'x', ' ', 'o'
+arreglo2:	.byte 'x', ' ', ' ', 'x'
+arreglo3:	.byte ' ', 'o', ' ', 'x'
+arreglo4:	.byte ' ', ' ', ' ', 'x'
+
+line: .asciz " --- --- --- --- \n"
+form1:	.asciz	"| %c | %c "
+form2:	.asciz	"| %c | %c |\n"
+
 .text
+.align 2
 
-linea: .asciz " --- --- --- ---\n"
-formato_hits: .asciz "| %c | %c | %c | %c |\n"
+.global board
 
-line:
-    /*
-    symb    code
-    |   ->  124
-    -   ->  045
+board:
+	
+	stmfd sp!,{lr}
+	bl despliegue
 
-    cuadro consiste en
+    mov r0,#0
+	mov r3,#0
+	ldmfd sp!,{lr}
+	bx lr
+	
+despliegue:
 
-     --- --- --- --- 
-    | R | R | R | R |
-     --- --- --- --- 
-    */
+    ldr r5,=arreglo
+	ldr r0,=line
+	bl printf
+    /* --- --- --- --- */
+	ldrb r1,[r5],#1
+	ldrb r2,[r5],#1
+	ldr r0,=form1
+	bl printf
+	ldrb r1,[r5],#1
+	ldrb r2,[r5],#1
+	ldr r0,=form2
+	bl printf
+	ldr r0,=line
+	bl printf
 
-table:
-    /*
-    read 
-    */
+    /* Leer siguiente arreglo */
+    /* p1_arr_n+1... */
+	ldr r5,=arreglo2
+
+	ldrb r1,[r5],#1
+	ldrb r2,[r5],#1
+	ldr r0,=form1
+	bl printf
+	ldrb r1,[r5],#1
+	ldrb r2,[r5],#1
+	ldr r0,=form2
+	bl printf
+	ldr r0,=line
+	bl printf
+	
+    ldr r5,=arreglo3
+
+	ldrb r1,[r5],#1
+	ldrb r2,[r5],#1
+	ldr r0,=form1
+	bl printf
+	ldrb r1,[r5],#1
+	ldrb r2,[r5],#1
+	ldr r0,=form2
+	bl printf
+	ldr r0,=line
+	bl printf
+	
+    ldr r5,=arreglo4
+
+	ldrb r1,[r5],#1
+	ldrb r2,[r5],#1
+	ldr r0,=form1
+	bl printf
+	ldrb r1,[r5],#1
+	ldrb r2,[r5],#1
+	ldr r0,=form2
+	bl printf
+	ldr r0,=line
+	bl printf

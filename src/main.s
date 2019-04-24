@@ -1,35 +1,13 @@
 
 .align 2
-.global main
-.type main, %function
-@ .func main
+/* Supuestamente no lleva global */
 .data
 
 tiro_input: .asciz "%c%d\n"   /*e.g. A4 -- O podemos pedir dos inputs fila -> columna */
 intro: .asciz "Bienvenidos a Battleship\n"
 mensaje_: .asciz "\n"
 
-p1_arr1: .byte ' ', ' ', ' ', ' '
-            @   'x', 'o'
-            @   120 / 88 , 111 / 79
-p1_arr2: .byte ' ', ' ', ' ', ' '
-p1_arr3: .byte ' ', ' ', ' ', ' '
-p1_arr4: .byte ' ', ' ', ' ', ' '
 
-p1_arr1_tiros: .byte ' ', ' ', ' ', ' '
-p1_arr2_tiros: .byte ' ', ' ', ' ', ' '
-p1_arr3_tiros: .byte ' ', ' ', ' ', ' '
-p1_arr4_tiros: .byte ' ', ' ', ' ', ' '
-
-p2_arr1: .byte ' ', ' ', ' ', ' '
-p2_arr2: .byte ' ', ' ', ' ', ' '
-p2_arr3: .byte ' ', ' ', ' ', ' '
-p2_arr4: .byte ' ', ' ', ' ', ' '
-
-p2_arr1_tiros: .byte ' ', ' ', ' ', ' '
-p2_arr2_tiros: .byte ' ', ' ', ' ', ' '
-p2_arr3_tiros: .byte ' ', ' ', ' ', ' '
-p2_arr4_tiros: .byte ' ', ' ', ' ', ' '
 main:
     stmfd sp!, {lr} @ inicio de programa.
 
@@ -39,6 +17,32 @@ main:
 	mov r3,#0
 	ldmfd sp!,{lr}
 	bx lr
+
+.data
+@   'x', 'o'
+@   120 / 88 , 111 / 79
+
+cont_p1: .word 0
+p1_arr1: .byte ' ', ' ', ' ', ' '            
+p1_arr2: .byte ' ', ' ', ' ', ' '
+p1_arr3: .byte ' ', ' ', ' ', ' '
+p1_arr4: .byte ' ', ' ', ' ', ' '
+
+p1_arr1_tiros: .byte ' ', ' ', ' ', ' '
+p1_arr2_tiros: .byte ' ', ' ', ' ', ' '
+p1_arr3_tiros: .byte ' ', ' ', ' ', ' '
+p1_arr4_tiros: .byte ' ', ' ', ' ', ' '
+
+cont_p2: .word 0
+p2_arr1: .byte ' ', ' ', ' ', ' '
+p2_arr2: .byte ' ', ' ', ' ', ' '
+p2_arr3: .byte ' ', ' ', ' ', ' '
+p2_arr4: .byte ' ', ' ', ' ', ' '
+
+p2_arr1_tiros: .byte ' ', ' ', ' ', ' '
+p2_arr2_tiros: .byte ' ', ' ', ' ', ' '
+p2_arr3_tiros: .byte ' ', ' ', ' ', ' '
+p2_arr4_tiros: .byte ' ', ' ', ' ', ' '
 
 /*
 El juego consiste en un tablero 4x4 donde cada jugador coloca un barco 

@@ -2,4 +2,7 @@
 
 Hecho en assembler
 
-Martin es gay.
+TODO
+    - recibir input
+    - escribir a arreglos
+    - 

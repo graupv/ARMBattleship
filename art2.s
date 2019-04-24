@@ -1,9 +1,8 @@
 .align 2
 .data
-.global main
-.type main, %function
+.global art2
 .text
-main:
+art2:
     stmfd	sp!, {lr}
     LDR R0,=format
     LDR R1,=art_0
