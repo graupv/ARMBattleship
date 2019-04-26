@@ -1,6 +1,7 @@
 .align 2
 .data
 .global art1
+.type art1, %function
 
 .text
 art1:
