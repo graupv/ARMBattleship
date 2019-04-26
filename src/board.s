@@ -26,7 +26,7 @@ board:
 
 despliegue:
 
-    ldr r5,=arreglo
+    ldr r5,=p1_arr1_barco
 	ldr r0,=line
 	bl printf	/* --- --- --- --- */
 	
@@ -41,9 +41,9 @@ despliegue:
 	ldr r0,=line
 	bl printf
 
-    /* Leer siguiente arreglo */
+    /* Leer siguiente p1_arr1_barco */
     /* p1_arr_n+1... */
-	ldr r5,=arreglo2
+	ldr r5,=p1_arr2_barco
 
 	ldrb r1,[r5],#1
 	ldrb r2,[r5],#1
@@ -56,7 +56,7 @@ despliegue:
 	ldr r0,=line
 	bl printf
 	
-    ldr r5,=arreglo3
+    ldr r5,=p1_arr3_barco
 
 	ldrb r1,[r5],#1
 	ldrb r2,[r5],#1
@@ -69,7 +69,7 @@ despliegue:
 	ldr r0,=line
 	bl printf
 	
-    ldr r5,=arreglo4
+    ldr r5,=p1_arr4_barco
 
 	ldrb r1,[r5],#1
 	ldrb r2,[r5],#1
@@ -81,3 +81,4 @@ despliegue:
 	bl printf
 	ldr r0,=line
 	bl printf
+	mov pc, lr
