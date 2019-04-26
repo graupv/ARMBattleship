@@ -41,6 +41,14 @@ main:
 
     /*  ya estan ambos barcos   */
 
+    bl tiros_p1
+    bl tiros_p1
+    bl tiros_p1
+
+    bl tiros_p2
+    bl tiros_p2
+    bl tiros_p2
+
     @ Salida
 	mov r0,#0
 	mov r3,#0
@@ -52,7 +60,7 @@ main:
 /*////////////////////*
 p1_win_check:
     @/* para revisar si ya gano *
-    cmp r13, #3
+    cmp r8, #3
     beq end_1
 
 p1_victory:
@@ -69,6 +77,16 @@ p2_win_check:
     cmp r14, #3
     beq end_2
 */
+tiros_p1:
+    bl get_col
+    bl get_fila
+    mov pc, lr
+
+tiros_p2:
+    bl get_col
+    bl get_fila
+    mov pc, lr
+
 get_barco_p1:
 
     @ldr r0,=orientacion
